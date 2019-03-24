@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: luke
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: luke
+        track: latest
+        version: 1.0.0
+    spec:
+      containers:
+        - name: luke
+          image: "arkroyal/lukebackend:latest"
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: BACKEND_PORT
+              value: "80"
