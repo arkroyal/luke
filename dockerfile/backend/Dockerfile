@@ -14,3 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && rm -rf ./luke
 
 ENTRYPOINT [ "python", "./backend.py"]
+EXPOSE 8888/tcp
